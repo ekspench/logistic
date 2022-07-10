@@ -20,7 +20,7 @@ class Box extends Model
 
   public function castesGroupByMark()
   {
-    return $this->hasMany(Cast::class, "box_id")->selectRaw('*, COUNT(id) as quantity_cast')->groupBy('mark');
+    return $this->hasMany(Cast::class, "box_id")->selectRaw('*, COUNT(id) as quantity_cast')->groupBy('mark')->groupBy('mark_replace');
   }
   public function castes()
   {

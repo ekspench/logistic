@@ -51,7 +51,7 @@ Route::middleware(ProtectAgainstSpam::class)->group(function () {
 				Route::middleware('auth', 'admin.auth')->group(function () {
 					Route::get('/mark-as-read', 'AdminDashboardController@markNotification')->name('admin.markNotification');
 
-					Route::get('/', 'AdminDashboardController@index');
+					//Route::get('/', 'AdminDashboardController@index');
 					Route::get('/activeticket', 'AdminDashboardController@activeticket')->name('admin.activeticket');
 					Route::get('/closedticket', 'AdminDashboardController@closedticket')->name('admin.closedticket');
 					Route::get('/assignedtickets', 'AdminDashboardController@assignedTickets');

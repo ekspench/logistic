@@ -1,13 +1,15 @@
 <style>
-    table{
+    table {
         width: 100%;
         border-collapse: collapse;
     }
-        table thead tr th{
+
+    table thead tr th {
         border: 1px solid;
         margin-top: 5px;
     }
-    table tbody tr td{
+
+    table tbody tr td {
         border: 1px solid;
     }
 </style>
@@ -16,7 +18,7 @@
     <thead>
         <tr>
             <th>
-                <img src="/home/ekspench/projet_web/logistic/public/img/scania-logo.jpg"/>
+                <img src="/home/ekspench/projet_web/logistic/public/img/scania-logo.jpg" />
             </th>
             <th align="center" colspan="3">
                 <h2>SCANIA</h2>
@@ -25,11 +27,11 @@
         <tr>
             <th align="center">
                 <span style="font-weight: bold"> Part réference</span>
-                <span  style="font-weight: 100;"> Réference pièce</span>
+                <span style="font-weight: 100;"> Réference pièce</span>
             </th>
             <th align="center">
                 <span style="font-weight: bold"> Amount in box</span>
-                <span  style="font-weight: 100;"> Quantité total bac</span>
+                <span style="font-weight: 100;"> Quantité total bac</span>
             </th>
             <th align="center">
                 <span style="font-weight:bold"> Batch number</span><br>
@@ -37,7 +39,7 @@
             </th>
             <th align="center">
                 <span style="font-weight: bold">Box number</span><br>
-                <span  style="font-weight: 100;">N° de caisse</span>
+                <span style="font-weight: 100;">N° de caisse</span>
             </th>
         </tr>
         <tr>
@@ -58,19 +60,19 @@
         <tr>
             <th align="center">
                 <span style="font-weight: bold">Name</span><br>
-                <span  style="font-weight: 100;"> Nom</span>
+                <span style="font-weight: 100;"> Nom</span>
             </th>
             <th align="center">
                 <span style="font-weight: bold">Quantity</span><br>
-                <span  style="font-weight: 100;"> Quantité</span>
+                <span style="font-weight: 100;"> Quantité</span>
             </th>
             <th align="center">
                 <span style="font-weight: bold">Casting mark</span><br>
-                <span  style="font-weight: 100;"> Répère coulée</span>
+                <span style="font-weight: 100;"> Répère coulée</span>
             </th>
             <th align="center">
                 <span style="font-weight: bold"> Date</span><br>
-                <span  style="font-weight: 100;"> Date</span>
+                <span style="font-weight: 100;"> Date</span>
             </th>
 
         </tr>
@@ -85,7 +87,11 @@
                     {{ $cast->quantity_cast }}
                 </td>
                 <td align="center">
-                    {{ $cast->mark }}
+                    @if ($cast->mark_replace)
+                        {{ $cast->mark_replace }}
+                    @else
+                        {{ $cast->mark }}
+                    @endif
                 </td>
                 <td align="center">
                     {{ date('d/m/Y', strtotime($cast->created_at)) }}
@@ -104,7 +110,7 @@
             </td>
             <td rowspan="2" align="center"
                 style="width: 50px;background-color: black;color: white; font-weight: bold; font-size: 16px;line-height:60px;">
-                <span >X</span>
+                <span>X</span>
             </td>
             <td rowspan="2" style="width: 45%;text-align: right;">
                 <span style="font-weight: bold">Quantity validated By</span> <br>
@@ -138,7 +144,7 @@
                 <span style="font-weight: bold">GO Shipping</span> <br>
                 <span>GO Expedition</span>
             </td>
-            <td  style="width: 25%">
+            <td style="width: 25%">
 
             </td>
         </tr>

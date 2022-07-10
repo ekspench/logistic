@@ -2,7 +2,7 @@
 							<div class="app-header header header-main">
 								<div class="container-fluid">
 									<div class="d-flex">
-										<a class="header-brand" href="{{url('admin')}}">
+										<a class="header-brand" href="/manufact/box">
 										{{--Logo--}}
 										@if ($title->image == null)
 

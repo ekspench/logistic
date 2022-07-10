@@ -92,6 +92,7 @@
 
 															</td>
 														</tr>
+														@can("Edit Profil")
 														<tr>
 															<td class="py-2">
 																<span class="font-weight-semibold w-50"> {{trans('langconvert.admindashboard.email')}} </span>
@@ -149,6 +150,7 @@
 															</td>
 															<td class="py-2 ps-4">{{Auth::user()->country}}</td>
 														</tr>
+														@endcan
 
 													</tbody>
 												</table>
