@@ -10,6 +10,11 @@
 
     <!-- INTERNAl bootstraptag css -->
     <link href="{{ asset('assets/plugins/taginput/bootstrap-tagsinput.css') }}?v=<?php echo time(); ?>" rel="stylesheet" />
+	<style>
+		.page-main{
+			background-color: #353a40 !important;
+		}
+	</style>
 @endsection
 
 @section('content')
@@ -18,9 +23,10 @@
     <!--End Page header-->
 
     <!--Article Create-->
-	<div class="col-xl-12 col-lg-12 col-md-12 mt-5 p-4 bg-dark card">
+	<div class="bg-dark container" style=" height: 100%;">
+	<div class="col-xl-12 col-lg-12 col-md-12 mt-8 p-4  ">
        
-				<form class="forms-sample  " id="form_cast" method="POST" action="{{route("box.create")}}">
+				<form class="forms-sample p-4  " id="form_cast" method="POST" action="{{route("box.create")}}">
 					@csrf
 				  
 					<div id="wizard2"  class="wizard2" >
@@ -62,7 +68,7 @@
 											style="height: 64px;font-size: 64px" class="input-group-text"><i
 												style="height: 64px;font-size: 64px" class="ik ik-lock"></i></label></span>
 	
-									<input style="height: 64px;font-size: 4rem" type="text" id="box_number"
+									<input style="height: 64px;font-size: 64px" type="text" id="box_number"
 										value="{{ count($box) }}" class="form-control" name="box_number" />
 								</div>
 	
@@ -72,8 +78,7 @@
 						<section>
 							<h5 class="bd-wizard-step-title text-white">Step 2</h5>
 							<h2 class="section-heading text-white">Entrée les mark coulée</h2>
-	
-							<input type="hidden" name="part_id" value={{ $part->id }} />
+
 							<div class="row">
 	
 	
@@ -142,6 +147,7 @@
 				</form>
 			
 	</div>
+</div>
     <!--End Article Create-->
 @endsection
 
@@ -164,4 +170,8 @@
 
     <!-- INTERNAL bootstraptag js-->
     <script src="{{ asset('assets/plugins/taginput/bootstrap-tagsinput.js') }}?v=<?php echo time(); ?>"></script>
+	<script src="{{ asset('assets/plugins/jquery-mask/jquery.mask.js') }}?v=<?php echo time(); ?>"></script>
+	<script>
+		  $('#i_cast_ref').mask('099.0A0');
+	</script>
 @endsection

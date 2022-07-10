@@ -34,11 +34,11 @@
                 <div class="d-flex justify-content-start items-center">
                     <div class="d-flex me-4">
                         <div>Réference pièce: </div>
-                        <div class="ms-1 fw-bold" >{{ $box->part->reference }}  </div>
+                        <div class="ms-1 fw-bold">{{ $box->part->reference }} </div>
                     </div>
                     <div class="d-flex me-4">
                         <div>Numero de caisse: </div>
-                        <div class="ms-1 fw-bold">{{ $box->number }}  </div>
+                        <div class="ms-1 fw-bold">{{ $box->number }} </div>
                     </div>
                     <div class="d-flex me-4">
                         <div>Company:</div>
@@ -240,8 +240,8 @@
                         @endcan
                     @else
                         <div class="pt-4 text-right">
-                            <a href="/manufact/box/pdf/label/{{ $box->id }}"
-                                target="blank" class="btn btn-primary">Imprimer label</a>
+                            <a href="/manufact/box/pdf/label/{{ $box->id }}" target="blank"
+                                class="btn btn-primary">Imprimer label</a>
                         </div>
                     @endif
 
@@ -258,4 +258,19 @@
 @section('scripts')
     <!-- INTERNAL select2 js-->
     <script src="{{ asset('assets/js/select2.js') }}"></script>
+    <script>
+        $('button[data-toggle=modal]').click(function() {
+            $("#modal_cast_id").val($(this).data("cast-id"));
+            $("#form_modal").attr("action", "/box/action/refuse-cast/" + $(this).data("box-id"));
+        });
+        $(".radio-status").on("change", function() {
+            let key = $(this).attr('key');
+            if ($(this).val() == 'validated') {
+                $("#mark_replace" + key).attr("disabled", "disabled");
+            } else {
+                $("#mark_replace" + key).removeAttr("disabled");
+            }
+
+        });
+    </script>
 @endsection

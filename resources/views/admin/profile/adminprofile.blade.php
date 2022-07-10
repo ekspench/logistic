@@ -200,6 +200,8 @@
 															name="lastname" value="{{Auth::user()->lastname }}" disabled>
 													</div>
 												</div>
+												@can("Edit Profil")
+												
 												<div class="col-sm-6 col-md-6">
 													<div class="form-group">
 														<label class="form-label"> {{trans('langconvert.admindashboard.emailaddress')}}</label>
@@ -207,6 +209,7 @@
 
 													</div>
 												</div>
+												@endcan
 												<div class="col-sm-6 col-md-6">
 													<div class="form-group">
 														<label class="form-label"> {{trans('langconvert.admindashboard.employeeiD')}}</label>
@@ -214,6 +217,7 @@
 
 													</div>
 												</div>
+												@can("Edit Profil")
 												<div class="col-sm-6 col-md-6">
 													<div class="form-group">
 														<label class="form-label"> {{trans('langconvert.admindashboard.mobilenumber')}}</label>
@@ -248,6 +252,7 @@
 														<input type="text" class="form-control" value="{{Auth::user()->timezone}}" disabled>
 													</div>
 												</div>
+												@endcan
 											</div>
 										</div>
 									</div>

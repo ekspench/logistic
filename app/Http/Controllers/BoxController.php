@@ -32,7 +32,7 @@ class BoxController extends Controller
 
         return DataTables::of($data)
             ->addColumn('part_ref', function ($data) {
-                return $data->part_id;
+                return $data->part->reference;
             })
             ->addColumn('box_number', function ($data) {
                 return $data->number;
@@ -88,6 +88,7 @@ class BoxController extends Controller
 
     public function createBox(Request $request)
     {
+       
         $box = Box::create(["part_id" => $request->part_id, "number" => $request->box_number]);
         $box->ref = "D" . Carbon::now()->format("dmy") . $box->id;
         $box->save();
