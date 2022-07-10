@@ -23,12 +23,12 @@
 </style>
 
 <div>
-    <h3 style="text-align: center;font-size: 16px; font-weight: bold;">Fiche de control</h3>
-    <h6 style="font-size: 16px; margin: 0;">Réference pièce: {{$box->part->reference}}</h6>
-    <h6 style="font-size: 16px; margin: 0;">Numero de caisse: {{$box->number}}</h6>
-    <h6 style="font-size: 16px; margin: 0;">Ref: #{{$box->ref}}</h6>
+    <h3 style="text-align: center;font-size: 22px; font-weight: bold;">Fiche de controle</h3>
+    <h6 style="font-size: 22px; margin: 0; font-weight: bold;">Réference pièce: {{ $box->part->reference }}</h6>
+    <h6 style="font-size: 22px; margin: 0; font-weight: bold;">Numero de caisse: {{ $box->number }}</h6>
+    <h6 style="font-size: 22px; margin: 0; font-weight: bold;">Ref: #{{ $box->ref }}</h6>
 
-    <table width="100%" border="0.5" style="font-weight: bold; font-size: 12pt; border-collapse: collapse"  cellpadding="2">
+    <table width="100%" border="0.5" style="font-weight: bold; font-size: 12pt; border-collapse: collapse;margin-top: 5px;"  cellpadding="2">
         <thead>
             <tr style="background-color: rgb(174, 238, 250)">
                 <th width="3%" style="text-align:center">N°</th>

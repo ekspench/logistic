@@ -76,8 +76,8 @@
 						</section>
 						<h3 class="text-white">Step 2 Title</h3>
 						<section>
-							<h5 class="bd-wizard-step-title text-white">Step 2</h5>
-							<h2 class="section-heading text-white">Entrée les mark coulée</h2>
+							<h5 class="bd-wizard-step-title text-white">Etape 3</h5>
+							<h2 class="section-heading text-white">Repère de coulée</h2>
 
 							<div class="row">
 	

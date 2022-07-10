@@ -87,7 +87,16 @@ function calculTotal() {
 
         $("#add_cast_btn").on("click", function () {
             var max_total = parseInt($("input[name='part_id']:checked").data("max-cast"));
-
+            if($("#i_cast_ref").val()==""||  $("#i_cast_qty").val()==""){
+                swal({
+                    title: `Erreur`,
+                    text: "Veuilez au moin entrer la reference et quantitée",
+                    icon: "warning",
+                    buttons: true,
+                    dangerMode: true,
+                })
+                return;
+            }
             var item_key = $('#boxTable tbody tr').length;
             if ((calculTotal() + parseInt($("#i_cast_qty").val()) > max_total)) {
                 swal({

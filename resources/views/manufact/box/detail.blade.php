@@ -236,13 +236,15 @@
                     @if (!$box->is_valid)
                         @can('Add Box')
                             <a href="/manufact/box/pdf/machinist-control/{{ $box->id }}" target="blank"
-                                class="btn btn-primary">Fiche de control</a>
+                                class="btn btn-primary">Fiche de controle</a>
                         @endcan
                     @else
-                        <div class="pt-4 text-right">
-                            <a href="/manufact/box/pdf/label/{{ $box->id }}" target="blank"
-                                class="btn btn-primary">Imprimer label</a>
-                        </div>
+                        @can('Control Box')
+                            <div class="pt-4 text-right">
+                                <a href="/manufact/box/pdf/label/{{ $box->id }}" target="blank"
+                                    class="btn btn-primary">Imprimer label</a>
+                            </div>
+                        @endcan
                     @endif
 
 
