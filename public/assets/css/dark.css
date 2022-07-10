@@ -5564,13 +5564,13 @@ Inbox Message Style
 }
 
 .dark-mode .wizard {
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  /*border: 1px solid rgba(255, 255, 255, 0.07);*/
   background-color: #191d43;
 }
 
 .dark-mode .wizard > .content {
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+ /* border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);*/
 }
 
 .dark-mode .wizard > .steps a .number, .dark-mode .wizard > .steps a:hover .number, .dark-mode .wizard > .steps a:active .number {
@@ -5592,7 +5592,7 @@ Inbox Message Style
 
 @media (min-width: 576px) {
   .dark-mode .wizard.vertical > .content {
-    border-left: 1px solid rgba(255, 255, 255, 0.07);
+    /*border-left: 1px solid rgba(255, 255, 255, 0.07);*/
   }
 }
 .dark-mode .tree li.branch {

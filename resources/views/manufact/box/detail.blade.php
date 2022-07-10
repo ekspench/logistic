@@ -74,7 +74,7 @@
                                             name="castes[{{ $key }}][id]" />
                                         <td>Jeremy PONCELET</td>
                                         <td class="text-center">{{ $cast->number }}</td>
-                                        <td class="text-center">{{ $cast->mark }}</td>
+                                        <td class="text-center text-uppercase">{{ $cast->mark }}</td>
 
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
@@ -116,7 +116,7 @@
                                             name="castes[{{ $key }}][id]" />
                                         <td>Jeremy PONCELET</td>
                                         <td class="text-center">{{ $cast->number }}</td>
-                                        <td class="text-center">{{ $cast->mark }}</td>
+                                        <td class="text-center text-uppercase">{{ $cast->mark }}</td>
 
                                         <td class="text-center"></td>
                                         <td class="text-center"></td>
@@ -267,7 +267,7 @@
             let key = $(this).attr('key');
             if ($(this).val() == 'validated') {
                 $("#mark_replace" + key).attr("disabled", "disabled");
-            } else {
+            } else {gi
                 $("#mark_replace" + key).removeAttr("disabled");
             }
 

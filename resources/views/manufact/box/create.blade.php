@@ -12,7 +12,7 @@
     <link href="{{ asset('assets/plugins/taginput/bootstrap-tagsinput.css') }}?v=<?php echo time(); ?>" rel="stylesheet" />
 	<style>
 		.page-main{
-			background-color: #353a40 !important;
+			background-color: #191d43; !important;
 		}
 	</style>
 @endsection
@@ -23,7 +23,7 @@
     <!--End Page header-->
 
     <!--Article Create-->
-	<div class="bg-dark container" style=" height: 100%;">
+	<div class=" container" style=" height: 100%;">
 	<div class="col-xl-12 col-lg-12 col-md-12 mt-8 p-4  ">
        
 				<form class="forms-sample p-4  " id="form_cast" method="POST" action="{{route("box.create")}}">
@@ -172,6 +172,6 @@
     <script src="{{ asset('assets/plugins/taginput/bootstrap-tagsinput.js') }}?v=<?php echo time(); ?>"></script>
 	<script src="{{ asset('assets/plugins/jquery-mask/jquery.mask.js') }}?v=<?php echo time(); ?>"></script>
 	<script>
-		  $('#i_cast_ref').mask('099.0A0');
+		  $('#i_cast_ref').mask('099.AAA');
 	</script>
 @endsection
