@@ -100,10 +100,10 @@ function calculTotal() {
                 return;
             }
             var $tr = "<tr>";
-            $tr += "<td>Usine 1</td>";
+            $tr += "<td>Jeremy PONCELET</td>";
             $tr += '<td class="cast"> <input  class="form-control  w-100 text-left hm-30" type="text" name="casts[' + item_key + '][mark]" value="' + $("#i_cast_ref").val() + '">' + "</td>";
             $tr += '<td class="qty"><input onchange="calculTotal()"  type="number" name="casts[' + item_key + '][quantity]" class="form-control iqty w-60 text-center hm-30" value="' + $("#i_cast_qty").val() + '"></td>';
-            $tr += "<td>" + '30/06/2022' + "</td>";
+            $tr += "<td>" + moment().format("D/M/Y")+ "</td>";
             $("#i_cast_ref").val("");
             $("#i_cast_qty").val("");
             $("#btn_submit_cast").css("display", "block");

@@ -267,7 +267,7 @@
             let key = $(this).attr('key');
             if ($(this).val() == 'validated') {
                 $("#mark_replace" + key).attr("disabled", "disabled");
-            } else {gi
+            } else {
                 $("#mark_replace" + key).removeAttr("disabled");
             }
 

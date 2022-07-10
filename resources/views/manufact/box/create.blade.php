@@ -90,10 +90,10 @@
 												<div class="col-sm-8">
 													<div class="form-inline">
 	
-														{!! Form::input('text', null, null, ['class' => 'form-control mb-2 mr-sm-2 mx-4', 'placeholder' => 'Repère de collée', 'id' => 'i_cast_ref']) !!}
+														{!! Form::input('text', null, null, ['class' => 'form-control mb-2 mr-sm-2 mx-4 text-uppercase', 'placeholder' => 'Repère de collée', 'id' => 'i_cast_ref']) !!}
 														{!! Form::input('number', null, null, ['class' => 'form-control mb-2 mr-sm-2 mx-4', 'placeholder' => 'Quantité', 'id' => 'i_cast_qty']) !!}
 														<button type="button" id="add_cast_btn"
-															class="btn btn-success btn-icon ml-2 mb-2"><i class="fa fa-plus"></i></button>
+															class="btn btn-success btn-icon ml-2 mb-2">Ajouter</button>
 													</div>
 												</div>
 											</div>
@@ -158,6 +158,8 @@
 	<script src="{{ asset('assets/plugins/jquery-steps/jquery.steps.min.js') }}"></script>
 	<script src="{{ asset('assets/plugins/jquery-validate/jquery.validate.js') }}"></script>
 	<script src="{{asset('assets/plugins/sweet-alert/sweetalert.min.js')}}"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/fr.js"></script>
 	<script src="{{ asset('assets/js/box-create.js') }}"></script>
 
 
@@ -171,6 +173,7 @@
     <!-- INTERNAL bootstraptag js-->
     <script src="{{ asset('assets/plugins/taginput/bootstrap-tagsinput.js') }}?v=<?php echo time(); ?>"></script>
 	<script src="{{ asset('assets/plugins/jquery-mask/jquery.mask.js') }}?v=<?php echo time(); ?>"></script>
+
 	<script>
 		  $('#i_cast_ref').mask('099.AAA');
 	</script>
