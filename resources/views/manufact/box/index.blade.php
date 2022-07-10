@@ -38,12 +38,12 @@
                         id="boxlist">
                         <thead>
                             <tr>
-                                <th class="text-center wp-5">{{ __('part_ref') }}</th>
-                                <th class="text-center">{{ __('box_number') }}</th>
-                                <th class="text-center">{{ __('quantity') }}</th>
+                                <th class="text-center wp-5">{{ __('Référence') }}</th>
+                                <th class="text-center">{{ __('Numéro de caisse') }}</th>
+                                <th class="text-center">{{ __('Quantité') }}</th>
                                 <th class="text-center">{{ __('conforme') }}</th>
                                 <th class="text-center">{{ __('non conforme') }}</th>
-                                <th class="text-center">{{ __('status') }}</th>
+                                <th class="text-center">{{ __('Statuts') }}</th>
                                 <th>{{ __('Action') }}</th>
                             </tr>
                         </thead>

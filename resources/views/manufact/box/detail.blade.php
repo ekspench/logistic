@@ -76,8 +76,8 @@
                                         <td class="text-center">{{ $cast->number }}</td>
                                         <td class="text-center text-uppercase">{{ $cast->mark }}</td>
 
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center">{{$cast->hallmark}}</td>
+                                        <td class="text-center">{{$cast->hallmark_machinist}}</td>
                                         <td class="text-center">
                                             @if ($cast->status === 'validated')
                                                 <i class="fa fa-check text-success font-weight-bold"></i>
@@ -118,8 +118,15 @@
                                         <td class="text-center">{{ $cast->number }}</td>
                                         <td class="text-center text-uppercase">{{ $cast->mark }}</td>
 
-                                        <td class="text-center"></td>
-                                        <td class="text-center"></td>
+                                        <td class="text-center"> @can('Control Box')
+                                                <input type="text"  style="max-width: 100px" class="form-control mx-auto" name="castes[{{ $key }}][hallmark]" />
+                                            @endcan
+                                        </td>
+                                        <td class="text-center">
+                                            @can('Control Box')
+                                                <input type="text"  style="max-width: 100px" class="form-control mx-auto" name="castes[{{ $key }}][hallmark_machinist]"/>
+                                            @endcan
+                                        </td>
                                         <td class="text-center">
                                             @can('Control Box')
                                                 <div class="form-check">

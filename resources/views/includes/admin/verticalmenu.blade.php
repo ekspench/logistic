@@ -1,7 +1,7 @@
                     <!--aside open-->
                     <aside class="app-sidebar">
                         <div class="app-sidebar__logo">
-                            <a class="header-brand" href="{{ url('admin') }}">
+                            <a class="header-brand  d-none" href="{{ url('admin') }}">
                                 {{-- Logo --}}
                                 @if ($title->image == null)
 
@@ -65,7 +65,7 @@
                                             <span
                                                 class="text-muted app-sidebar__user-name text-sm">{{ Auth::user()->getRoleNames()[0] }}</span>
                                         @endif
-                                        @php
+                                       <!-- @php
                                             use App\Models\usersettings;
                                             if (Auth::check() && Auth::user()->id) {
                                                 $avgrating1 = usersettings::where('users_id', Auth::id())->sum('star1');
@@ -86,7 +86,7 @@
                                             }
                                         @endphp
 
-                                        <div class="allprofilerating pt-1" data-rating="{{ $avg1 }}"></div>
+                                        <div class="allprofilerating pt-1" data-rating="{{ $avg1 }}"></div>-->
                                     </div>
                                 </div>
                             </div>

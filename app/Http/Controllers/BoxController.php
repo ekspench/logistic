@@ -59,7 +59,7 @@ class BoxController extends Controller
             })
             ->addColumn('action', function ($data) {
               
-                return '<a href="'.url('manufact/box/detail/' . $data->id).'" class="action-btns1 edit-testimonial"><i class="feather feather-eye text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Edit" aria-label="Edit"></i></a>';
+                return '<a href="'.url('manufact/box/detail/' . $data->id).'" class="s edit-testimonial"><i class="feather feather-eye text-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="" data-bs-original-title="Edit" aria-label="Edit"></i></a>';
             })
             ->rawColumns(['part_ref', 'box_number', 'quantity', 'quantity_conforme', 'quantity_conforme', 'status', 'action'])
             ->make(true);
@@ -140,6 +140,8 @@ class BoxController extends Controller
         foreach ($request->castes as $key => $c) {
             $cast = Cast::find($c["id"]);
             $cast->status = $c["status"];
+            $cast->hallmark=$c["hallmark"];
+            $cast->hallmark_machinist=$c["hallmark_machinist"];
             if (isset($c["mark_replace"])){
                 $cast->mark_replace = $c["mark_replace"];
             }
