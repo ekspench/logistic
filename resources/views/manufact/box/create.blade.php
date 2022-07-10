@@ -76,7 +76,7 @@
 						</section>
 						<h3 class="text-white">Step 2 Title</h3>
 						<section>
-							<h5 class="bd-wizard-step-title text-white">Etape 3</h5>
+							<h5 class="bd-wizard-step-title text-white">Étape 3</h5>
 							<h2 class="section-heading text-white">Repère de coulée</h2>
 
 							<div class="row">
@@ -86,7 +86,9 @@
 									<div class=" mb-0">
 										<div class="">
 											<div class="row">
-	
+												<div class="d-flex mb-4">	<h5 class="ms-4">Réference pièce: <span class="partRefInfo"></span></h5>
+													<h5 class="ms-4">N° Caisse: <span class="boxNumberInfo"></h5></div>
+											
 												<div class="col-sm-8">
 													<div class="form-inline">
 	
@@ -133,8 +135,10 @@
 						</section>
 						<h3 class="text-white">Verification</h3>
 						<section>
-							<h5 class="bd-wizard-step-title text-white">Etape</h5>
+							<h5 class="bd-wizard-step-title text-white">Étape</h5>
 							<h2 class="section-heading mb-5 text-white">Prévisualisation</h2>
+							<h3>Réference pièce: <span class="partRefInfo"></span></h3>
+							<h3>N° Caisse: <span class="boxNumberInfo"></h3>
 							<table class="table table-hover mb-0 without-header " id="boxTableInfo">
 								<tbody>
 									<tr>

@@ -25,12 +25,27 @@ function calculTotal() {
         },
         onStepChanging: function (event, currentIndex, newIndex) {
             form.validate().settings.ignore = ":disabled,:hidden";
+            if(newIndex==2){
+                $(".partRefInfo").html(parseInt($("input[name='part_id']:checked").data("ref")));
+                $(".boxNumberInfo").html($("#box_number").val());
+            }
             if (newIndex == 3) {
-                var max_total = parseInt($("input[name='gender']:checked").data("max-cast"));
+                var max_total = parseInt($("input[name='part_id']:checked").data("max-cast"));
+               
                 if(calculTotal()<=0){
                     swal({
                         title: `Erreur`,
                         text: "Ajouter au moin un coulée",
+                        icon: "warning",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    return form.invalid();
+                }
+                if(calculTotal() < max_total){
+                    swal({
+                        title: `Erreur`,
+                        text: "Veuillez remplir la caisse",
                         icon: "warning",
                         buttons: true,
                         dangerMode: true,
@@ -60,8 +75,8 @@ function calculTotal() {
                     $('#boxTableInfo tbody').append($tr);
                 });
                 $("#totalInfo").html(calculTotal());
-                $("#partRefInfo").html(parseInt($("input[name='part_id']:checked").data("ref")));
-                $("#boxNumberInfo").html($("#box_number").val());
+                $(".partRefInfo").html(parseInt($("input[name='part_id']:checked").data("ref")));
+                $(".boxNumberInfo").html($("#box_number").val());
             }
             return form.valid();
         },
