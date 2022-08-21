@@ -88,8 +88,8 @@ class BoxController extends Controller
 
     public function createBox(Request $request)
     {
-       
-        $box = Box::create(["part_id" => $request->part_id, "number" => $request->box_number]);
+        
+        $box = Box::create(["part_id" => $request->part_id, "number" => $request->box_number,'machinist_id'=>$request->user()->id]);
         $box->ref = "D" . Carbon::now()->format("dmy") . $box->id;
         $box->save();
 

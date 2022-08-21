@@ -67,7 +67,7 @@
                             <div class="input-group mb-3">
                                 <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i
                                         style="height: 116px;font-size: 64px" class="fa fa-lock"></i></button>
-                                <input disabled style="font-size: 64px" type="text" id="box_number" class="form-control"
+                                <input readonly  style="font-size: 64px" type="text" id="box_number" class="form-control"
                                     placeholder="" aria-label="Example text with button addon"
                                     aria-describedby="button-addon1" value="{{ count($box) }}" class="form-control"
                                     name="box_number">
@@ -208,7 +208,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/locale/fr.js"></script>
     <script src="{{ asset('assets/js/box-create.js') }}"></script>
 
-
+    <script>
+              var user_name="<?php echo auth()->user()->name; ?>";
+    </script>
     <!-- INTERNAL Index js-->
     <script src="{{ asset('assets/js/support/support-sidemenu.js') }}?v=<?php echo time(); ?>"></script>
     <script src="{{ asset('assets/js/select2.js') }}?v=<?php echo time(); ?>"></script>
@@ -235,7 +237,7 @@
                     dangerMode: true,
                 })
             } else {
-                $("#box_number").removeAttr('disabled');
+                $("#box_number").removeAttr('readonly');
 				$('#unlock_box_number').modal('hide');
 				$("#button-addon1 i").removeClass( "fa fa-lock" ).addClass( "fa fa-unlock-alt" );
             }

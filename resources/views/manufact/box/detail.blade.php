@@ -72,7 +72,7 @@
                                     <tr>
                                         <input value="{{ $cast->id }}" type="hidden"
                                             name="castes[{{ $key }}][id]" />
-                                        <td>Jeremy PONCELET</td>
+                                        <td>{{$box->machinist->name}}</td>
                                         <td class="text-center">{{ $cast->number }}</td>
                                         <td class="text-center text-uppercase">{{ $cast->mark }}</td>
 
@@ -114,7 +114,7 @@
                                     <tr>
                                         <input value="{{ $cast->id }}" type="hidden"
                                             name="castes[{{ $key }}][id]" />
-                                        <td>Jeremy PONCELET</td>
+                                        <td>{{$box->machinist->name}}</td>
                                         <td class="text-center">{{ $cast->number }}</td>
                                         <td class="text-center text-uppercase">{{ $cast->mark }}</td>
 

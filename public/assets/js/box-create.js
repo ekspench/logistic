@@ -9,6 +9,15 @@ function calculTotal() {
     return total;
 }
 
+function delete_cast(index){
+    rows = $('#boxTable tbody tr');
+    for(i=0;i<rows.length;i++){
+        if(i==index){
+            rows[i].remove();
+        }
+    }
+    calculTotal()
+}
 
 (function ($) {
     'use strict';
@@ -69,7 +78,7 @@ function calculTotal() {
                 ;
                 $.each(rows, function () {
                     let $tr = "<tr>";
-                    $tr += '<td class="wp-15">Jermery PONCELET</td>';
+                    $tr += '<td class="wp-15">'+user_name+'</td>';
                     $tr += '<td ><h3 class=" text-uppercase" >' + $(this).find("td.cast input").val() + "</h3></td>";
                     $tr += "<td><h3>" + $(this).find("td.qty input").val() + "</h3></td>";
                     $('#boxTableInfo tbody').append($tr);
@@ -124,10 +133,10 @@ function calculTotal() {
                 return;
             }
             var $tr = "<tr>";
-            $tr += "<td>Jeremy PONCELET</td>";
+            $tr += "<td>"+user_name+"</td>";
             $tr += '<td class="cast"> <input  class="form-control  text-uppercase  w-100 text-left hm-30" type="text" name="casts[' + item_key + '][mark]" value="' + $("#i_cast_ref").val() + '">' + "</td>";
             $tr += '<td class="qty"><input onchange="calculTotal()"  type="number" name="casts[' + item_key + '][quantity]" class="form-control iqty w-60 text-center hm-30" value="' + $("#i_cast_qty").val() + '"></td>';
-            $tr += "<td>" + moment().format("D/M/Y")+ "</td>";
+            $tr += "<td><span>" + moment().format("D/M/Y")+' </span><button type="button" onclick="delete_cast('+item_key+')" class="action-btns1 ml-2 delete-cast"><i class="feather feather-trash-2 text-danger"></i></button>'+ "</td>";
             $("#i_cast_ref").val("");
             $("#i_cast_qty").val("");
             $("#btn_submit_cast").css("display", "block");

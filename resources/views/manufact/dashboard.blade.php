@@ -122,13 +122,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <div style="max-width:720px" id="chart"></div>
+                </div>
                 <div class="col-xl-12 col-lg-12 col-md-12">
                     <div class="card mb-0">
                         <div class="card-header border-0">
                             <h4 class="card-title">Dernier pièce coulée</h4>
                         </div>
                         <div class="card-body">
-                         
+
                             <div id="reportrange"
                                 style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%;max-width: 350px;">
                                 <i class="fa fa-calendar"></i>&nbsp;
@@ -167,6 +170,8 @@
 @section('scripts')
     <!-- INTERNAL Vertical-scroll js-->
     <script src="{{ asset('assets/plugins/vertical-scroll/jquery.bootstrap.newsbox.js') }}"></script>
+    <!-- INTERNAL Apexchart js-->
+    <script src="{{ asset('assets/plugins/apexchart/apexcharts.js') }}?v=<?php echo time(); ?>"></script>
 
     <!-- INTERNAL Data tables -->
     <script src="{{ asset('assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
@@ -231,7 +236,7 @@
                     "datatype": "json",
                     data: function(d) {
                         d.min = start.format('YYYY-MM-DD'),
-                        d.max = end.format('YYYY-MM-DD')
+                            d.max = end.format('YYYY-MM-DD')
                     }
                 },
                 columns: [
@@ -294,8 +299,8 @@
 
             function cb(s, e) {
                 $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-                start=s;
-                end=e;
+                start = s;
+                end = e;
                 table.draw();
             }
             // checkbox checkall
@@ -308,7 +313,8 @@
                     'Les 7 derniers jours': [moment().subtract(6, 'days'), moment()],
                     'Les 30 derniers jours': [moment().subtract(29, 'days'), moment()],
                     'Ce mois-ci': [moment().startOf('month'), moment().endOf('month')],
-                    'Le mois dernier': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month')
+                    'Le mois dernier': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1,
+                            'month')
                         .endOf('month')
                     ]
                 }
@@ -382,12 +388,78 @@
                         }
                     });
             });
-     
 
-      
+
+
             $('#customCheckAll').on('click', function() {
                 $('.checkall').prop('checked', this.checked);
             });
+
+
+
+
+
+            var options = {
+                series: [76, 67, 61, 90],
+                chart: {
+                    height: 390,
+                    type: 'radialBar',
+                },
+                plotOptions: {
+                    radialBar: {
+                        offsetY: 0,
+                        startAngle: 0,
+                        endAngle: 270,
+                        hollow: {
+                            margin: 5,
+                            size: '30%',
+                            background: 'transparent',
+                            image: undefined,
+                        },
+                        dataLabels: {
+                            name: {
+                                show: true,
+                            },
+                            value: {
+                                show: true,
+                            }
+                        }
+                    }
+                },
+                colors: ['#26fd18', '#20261f', '#182a5b', '#4e570b'],
+                labels: ['Conformité', 'Rebut', 'Contrôle RX/UX', 'Réparation'],
+                legend: {
+                    show: true,
+                    floating: true,
+                    fontSize: '16px',
+                    position: 'left',
+                    offsetX: 160,
+                    offsetY: 15,
+                    labels: {
+                        useSeriesColors: true,
+                    },
+                    markers: {
+                        size: 0
+                    },
+                    formatter: function(seriesName, opts) {
+                        return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
+                    },
+                    itemMargin: {
+                        vertical: 3
+                    }
+                },
+                responsive: [{
+                    breakpoint: 480,
+                    options: {
+                        legend: {
+                            show: true
+                        }
+                    }
+                }]
+            };
+
+            var chart = new ApexCharts(document.querySelector("#chart"), options);
+            chart.render()
 
         })(jQuery);
     </script>

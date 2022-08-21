@@ -395,8 +395,11 @@ Route::middleware(ProtectAgainstSpam::class)->group(function () {
 				Route::get("/box/pdf/machinist-control/{id}", [BoxController::class, 'pdfMachinistControl'])->name("box.pdf.machinist-control");
 				Route::post("/box/update/{id}",[BoxController::class,"update"])->name("box.update");
 				//cast
+				Route::get("/reports", [BoxController::class, 'report'])->name("box.report");
 				Route::post("/cast/get-list", [CastController::class, 'getCastList'])->name("cast.get.list");
+
 			});
+
 		});
 		Route::post('/guest/emailsvalidate', [GuestticketController::class, 'emailsvalidateguest'])->name('guest.emailsvalidate');
 		Route::post('/guest/verifyotp', [GuestticketController::class, 'verifyotp'])->name('guest.verifyotp');

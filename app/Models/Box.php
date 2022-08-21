@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Box extends Model
 {
@@ -32,7 +33,7 @@ class Box extends Model
   }
   public function castes_by_status($status)
   {
-    return $this->hasMany(Cast::class, "box_id")->where("status",$status);
+    return $this->hasMany(Cast::class, "box_id")->where("status", $status);
   }
   public function castes_conforme()
   {
@@ -49,5 +50,15 @@ class Box extends Model
   public function quantiy_conforme()
   {
     return $this->castes_conforme()->count();
+  }
+
+  /**
+   * Get the machinist that owns the Box
+   *
+   * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+   */
+  public function machinist(): BelongsTo
+  {
+    return $this->belongsTo(User::class, 'machinist_id');
   }
 }
